@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: post
+author: "大西瓜"
 title: "make install"
 date:   2024-04-30 12:48:03 +0800
 categories: [update,make] 
