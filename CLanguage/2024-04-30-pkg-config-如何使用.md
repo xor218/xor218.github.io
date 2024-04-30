@@ -8,19 +8,32 @@ categories: [update,CLanguage]
 
 ## 基本用法
 
-** pkg-config --cflags --libs 库名称**
+**pkg-config --cflags --libs 库名称**
 
 
 ```bash
     gcc main.c `pkg-config --cflags --libs x11`
-
-
-
-
 ```
 
-pkg-config --cflags --libs x11` 列出编译的 include 路径 L 链接库的路径 和库名称
-output: -I/opt/homebrew/Cellar/libx11/1.8.9/include -I/opt/homebrew/Cellar/libxcb/1.17.0/include -I/opt/homebrew/Cellar/libxau/1.0.11/include -I/opt/homebrew/Cellar/libxdmcp/1.1.5/include -I/opt/homebrew/Cellar/xorgproto/2024.1/include -L/opt/homebrew/Cellar/libx11/1.8.9/lib -lX11
+pkg-config --cflags --libs x11 列出编译的 include 路径 L 链接库的路径 和库名称`
+
+
+**output**: 
+
+-I/opt/homebrew/Cellar/libx11/1.8.9/include 
+
+-I/opt/homebrew/Cellar/libxcb/1.17.0/include 
+
+-I/opt/homebrew/Cellar/libxau/1.0.11/include 
+
+-I/opt/homebrew/Cellar/libxdmcp/1.1.5/include 
+
+-I/opt/homebrew/Cellar/xorgproto/2024.1/include 
+
+-L/opt/homebrew/Cellar/libx11/1.8.9/lib 
+
+-lX11
+
 
 
 pkg-config 会查找 环境变量 PKG_CONFIG_PATH 查找库的Cflag 和库的路径的 .pc文件 库名.pc   
@@ -72,7 +85,7 @@ Cflags字段是编译源文件时需要的标志。-I${includedir}/libraryname�
 pkg-config --list-all
 ```
 
-
+```bash
 
 ImageMagick                 ImageMagick - ImageMagick - convert, edit, and compose images (ABI Q16HDRI)
 
