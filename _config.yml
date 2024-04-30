@@ -17,17 +17,36 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+# 欢迎来到杰基尔
+#
+# 该配置文件用于影响整个博客的设置，值为
+# 您只需设置一次，之后就很少再编辑了。如果您发现
+# 如果你经常编辑该文件，请考虑使用 Jekyll 的数据文件
+# 为需要经常更新的数据提供 # 功能。
+#
+# 由于技术原因，当您使用
+# 'bundle exec jekyll serve'。如果更改了该文件，请重启服务器进程。
+#
+# 如果您需要 YAML 语法方面的帮助，这里有一些快速参考资料：
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# 网站设置
+# 这些用于个性化您的新网站。请查看 HTML 文件、
+# 你会看到它们通过 {{ site.title }}、{{ site.email }} 等方式被访问。
+# 您可以创建任何自定义变量，它们都可以访问
+# 通过 {{ site.myvariable }} 在模板中。
 
-title: Your awesome title
-email: your-email@example.com
+title: Xor NoteBook
+email: xor218@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://xor218.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: xor218
+github_username:  xor218
 
 # Build settings
 theme: minima
@@ -41,6 +60,14 @@ plugins:
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
+#
+# # 不进行处理。
+# 默认情况下不处理以下项目。
+# 在此处的 "exclude: "键下列出的任何项目都将自动添加到
+# 内部 "默认列表"。
+#
+# 可通过明确列出目录来处理排除项，或
+# 它们在 `include:` 列表中的文件路径。
 #
 # exclude:
 #   - .sass-cache/
