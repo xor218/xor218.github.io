@@ -11,5 +11,5 @@ layout: home
 - [CMake](/cmake)
 - [Make](/make)
 - [计算机网络](/Network)
-- [C/c++](/CandCpp.markdown)
+- [C/C++](/CandCpp.markdown)
 
