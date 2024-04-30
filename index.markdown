@@ -8,8 +8,8 @@ layout: home
 
 
 <h1>Tab of Content</h1>
-- [CMake](/cmake)
-- [Make](/make)
-- [计算机网络](/network)
-- [C/C++](/CandCpp.markdown)
+- [CMake]({{ site.baseurl }}/cmake)
+- [Make]({{ site.baseurl }}/make)
+- [计算机网络]({{ site.baseurl }}/network)
+- [C/C++]({{ site.baseurl }}/CandCpp)
 
