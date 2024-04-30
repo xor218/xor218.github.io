@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome Xor notebook"
+author: "大西瓜"
 date:   2024-04-30 09:00:23 +0800
 categories: jekyll update
 ---
