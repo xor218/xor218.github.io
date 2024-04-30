@@ -24,11 +24,11 @@ maketitle(){
     touch $filename
     # //写入文件
     echo "---" >> $filename
-    echo "layout: post" >> $filename
-    echo "title: \" $@\"" >> $filename
+    echo "layout: default" >> $filename
+    echo "title: \"$@\"" >> $filename
     # date:   2024-04-26 15:59:09 +0800 格式
     echo "date:   $date $(date "+%H:%M:%S %z")" >> $filename
-    echo "categories: jekyll update " >> $filename
+    echo "categories: [update,$(basename $(pwd))] " >> $filename
     echo "---" >> $filename
 
     echo "Create $filename success!"

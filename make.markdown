@@ -10,7 +10,7 @@ listedInHeader: true
 
 <ul>
 {% for page in site.pages %}
-    {% if page.path contains 'make' %}
+    {% if page.path contains 'Make' %}
         <!-- not include self -->
         {% unless page.listedInHeader %}  
             <li>
