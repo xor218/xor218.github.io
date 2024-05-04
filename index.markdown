@@ -12,4 +12,5 @@ layout: home
 - [Make]({{ site.baseurl }}/make)
 - [计算机网络]({{ site.baseurl }}/network)
 - [C/C++]({{ site.baseurl }}/CandCpp)
+- [Qt]({{ site.baseurl  }}/Qt)
 
