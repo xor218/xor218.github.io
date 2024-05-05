@@ -11,7 +11,7 @@ listedInHeader: true
 
 <ul>
 {% for page in site.pages %}
-    {% if page.path contains 'Linux' %}
+    {% if page.path contains 'LinuxBase' %}
         <!-- not include self -->
         {% unless page.listedInHeader %}  
             <li>
