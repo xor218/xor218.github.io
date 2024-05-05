@@ -13,4 +13,5 @@ layout: home
 - [计算机网络]({{ site.baseurl }}/network)
 - [C/C++]({{ site.baseurl }}/CandCpp)
 - [Qt]({{ site.baseurl  }}/Qt)
+- [Linux]({{ site.baseurl  }}/Linux)
 
