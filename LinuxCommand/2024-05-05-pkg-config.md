@@ -38,7 +38,10 @@ SYNOPSIS
 
        除了在命令行中指定软件包名称外，还可以给出指定 .pc 文件的完整路径
        而不是.pc。这样，用户就可以直接查询特定的 .pc 文件。
+```
 
+
+```bash
 
 HOW USE:
 	pkg-config 会搜索环境变量 PKG_CONFIG_PATH 指定的目录，如果没有指定，则会搜索默认目录
@@ -47,6 +50,11 @@ HOW USE:
 	如果自己要添加到搜索目录 可以执行环境变量 
 	export PKG_CONFIG_PATH=/your/path/to/add/to/pkgcon:$PKG_CONFIG_PATH
 
+
+```
+
+
+```bash
 EXAMPLE:
 		
 		gcc file.c `pkg-config --cflags --libs openssl`
