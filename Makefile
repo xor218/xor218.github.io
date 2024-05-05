@@ -2,7 +2,7 @@
 
 run:
 	 bundle exec jekyll serve
-.PHONY: run  clean
+.PHONY: run  clean test
 
 update:
 	bundle update
@@ -16,3 +16,6 @@ env:
 	if [ -f maketitle.sh ]; then \
 		. maketitle.sh ; \
 	fi
+
+test:
+	bundle exec jekyll serve --trace
