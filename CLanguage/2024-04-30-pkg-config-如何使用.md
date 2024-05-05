@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "大西瓜"
-title: "pkg-config 如何使用"
+title: "pkg-config 找库 头文件的编译指令"
 date:   2024-04-30 15:07:52 +0800
 categories: [update,CLanguage] 
 ---
