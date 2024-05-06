@@ -1,8 +1,13 @@
 
+all:run80
+
+run80:
+	sudo bundle exec jekyll serve -P 80 -H 0.0.0.0
+
 
 run:
-	 bundle exec jekyll serve
-.PHONY: run  clean test
+	bundle exec jekyll serve
+.PHONY: run  clean test run80
 
 update:
 	bundle update
