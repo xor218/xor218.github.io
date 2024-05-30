@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "大西瓜"
-title: "The Basics"
+title: "The Basics 基础"
 date:   2024-05-22 12:30:07 +0800
 categories: [update,Swift] 
 ---
@@ -9,6 +9,12 @@ categories: [update,Swift]
 ## 1.基础知识
 
 Swift提供了许多基本的数据类型，包括用于整数的 Int ，用于浮点值的 Double ，用于布尔值的 Bool 和用于文本的 String 。Swift还提供了三种主要集合类型的强大版本： Array 、 Set 和 Dictionary ，如集合类型中所述。
+
+
+
+
+
+
 
 
 
@@ -849,8 +855,3 @@ precondition(index > 0, "Index must be greater than zero.")
 
 
 
-
-----
-
-```swift```
-ref:https://docs.swift.org/swift-book/documentation/the-swift-programming-language/thebasics#Type-Safety-and-Type-Inference
