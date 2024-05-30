@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "大西瓜"
-title: "Basic Operators"
+title: "Basic Operators 基本操作"
 date:   2024-05-23 15:50:02 +0800
 categories: [update,Swift] 
 ---
@@ -22,7 +22,10 @@ Swift还提供了C中没有的范围运算符，例如 a..<b 和 a...b ，作为
 
 本章介绍Swift中的常用运算符。高级运算符涵盖了Swift的高级运算符，并描述了如何定义自己的自定义运算符以及为自己的自定义类型实现标准运算符。
 
-## 1.2 术语i
+
+&nbsp;
+&nbsp;
+## 1.2 术语
 
 运算符可以是一元、二元或三元：
 
@@ -33,7 +36,8 @@ Swift还提供了C中没有的范围运算符，例如 a..<b 和 a...b ，作为
 运算符影响的值是操作数。在表达式 1 + 2 中， + 符号是中缀运算符，其两个操作数是值 1 和 2 。
 
 
-
+&nbsp;
+&nbsp;
 ## 1.3 赋值运算符
 
 赋值运算符（ a = b ）使用 b 的值更新 a 的值：
@@ -60,7 +64,8 @@ if x = y {
 ```
 此功能可防止赋值运算符（ = ）在实际使用等于运算符（ == ）时意外使用。通过使 if x = y 无效，Swift可以帮助您避免代码中的此类错误。
 
-
+&nbsp;
+&nbsp;
 ## 1.4 算数运算符
 
 Swift支持所有数字类型的四个标准算术运算符：
@@ -80,7 +85,8 @@ String 连接也支持加法运算符：
 "hello, " + "world"  // equals "hello, world"
 ```
 
-
+&nbsp;
+&nbsp;
 ## 1.4 余数运算符
 余数运算符 ( a % b ) 计算出 b 的倍数可以容纳在 a 中，并返回剩下的值（称为余数）。
 
@@ -106,6 +112,8 @@ String 连接也支持加法运算符：
 
 ```
 
+&nbsp;
+&nbsp;
 ## 1.5 一元减运算符
 
 可以使用前缀 - 切换数值的符号，称为一元减运算符：
@@ -117,6 +125,8 @@ let plusThree = -minusThree   // plusThree equals 3, or "minus minus three"
 ```
 一元减号运算符 ( - ) 直接添加到其所操作的值之前，没有任何空格。
 
+&nbsp;
+&nbsp;
 ## 1.6 一元加运算符
 一元加运算符 ( + ) 仅返回其运算的值，不做任何更改：
 ```swift
@@ -127,7 +137,8 @@ let alsoMinusSix = +minusSix  // alsoMinusSix equals -6
 尽管一元加运算符实际上不执行任何操作，但在对负数使用一元减运算符时，您可以使用它在代码中为正数提供对称性。
 
 
-
+&nbsp;
+&nbsp;
 ### 1.7 复合赋值运算符
 
 与 C 一样，Swift 提供了复合赋值运算符，将赋值 ( = ) 与另一个操作结合起来。一个例子是加法赋值运算符 ( += )：
@@ -138,7 +149,8 @@ a += 2
 表达式 a += 2 是 a = a + 2 的简写。实际上，加法和赋值被合并到一个运算符中，同时执行这两项任务。
 
 
-
+&nbsp;
+&nbsp;
 ### 1.8 比较运算符
 
 Swift 支持以下比较运算符：
@@ -187,7 +199,8 @@ if name == "world" {
 
 
 
-
+&nbsp;
+&nbsp;
 ### 1.9 三元条件运算符
 
 三元条件运算符是一个特殊的运算符，由三个部分组成，其形式为 question ? answer1 : answer2 。这是根据 question 是 true 还是 false 来评估两个表达式之一的快捷方式。如果 question 为 true，则计算 answer1 并返回其值；否则，它评估 answer2 并返回其值。
@@ -227,7 +240,8 @@ if hasHeader {
 第一个示例使用三元条件运算符意味着可以在一行代码中将 rowHeight 设置为正确的值，这比第二个示例中使用的代码更简洁。
 三元条件运算符提供了一种有效的速记方式来决定考虑两个表达式中的哪一个。但是，请谨慎使用三元条件运算符。如果过度使用，它的简洁性可能会导致代码难以阅读。
 避免将三元条件运算符的多个实例组合到一个复合语句中。
-
+&nbsp;
+&nbsp;
 
 
 
@@ -258,6 +272,8 @@ userDefinedColorName = "green"
 colorNameToUse = userDefinedColorName ?? defaultColorName
 // userDefinedColorName isn't nil, so colorNameToUse is set to "green"
 ```
+&nbsp;
+&nbsp;
 
 ### 1.11 范围运算符
 Swift 包含多个范围运算符，它们是表达值范围的快捷方式。

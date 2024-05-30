@@ -5,17 +5,15 @@ listedInHeader: true
 ---
 
 <h2>Note List:</h2>
-
+官方:[点我](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/thebasics#Type-Safety-and-Type-Inference)
 
 <ul>
-{% for page in site.pages %}
-    {% if page.path contains 'Swift' %}
-        <!-- not include self -->
-        {% unless page.listedInHeader %}  
+    {% assign pages = site.pages | where_exp: "page", "page.path contains 'Swift'" | sort: 'date' %}
+    {% for page in pages %}
+        {% unless page.listedInHeader %}
             <li>
                 <a href="{{ page.url }}">{{ page.title }}</a>
             </li>
         {% endunless %}
-    {% endif %}
-{% endfor %}
+    {% endfor %}
 </ul>

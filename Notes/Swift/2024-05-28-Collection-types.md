@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "大西瓜"
-title: "Collection types"
+title: "Collection types 集合类型"
 date:   2024-05-28 19:46:49 +0800
 categories: [update,Swift] 
 ---

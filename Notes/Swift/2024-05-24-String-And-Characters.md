@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "大西瓜"
-title: "String And Characters"
+title: "String And Characters 字符串和字符"
 date:   2024-05-24 10:29:07 +0800
 categories: [update,Swift] 
 ---
@@ -23,7 +23,8 @@ Swift 的 String 类型与 Foundation 的 NSString 类桥接。 Foundation 还�
 
 
 
-
+&nbsp;
+&nbsp;
 ### 1.1 字符串文字
 
 您可以在代码中包含预定义的 String 值作为字符串文字。字符串文字是用双引号 ( " ) 括起来的字符序列。
@@ -36,7 +37,8 @@ let someString = "Some string literal value"
 
 
 
-
+&nbsp;
+&nbsp;
 ### 1.2 多行字符串
 如果您需要跨多行的字符串，请使用多行字符串文字 - 由**三个双引号**括起来的字符序列：
 
@@ -95,7 +97,8 @@ It also ends with a line break.
 
 
 
-
+&nbsp;
+&nbsp;
 ### 1.3 字符串中的特殊字符
 
 字符串文字可以包含以下特殊字符：
@@ -129,7 +132,8 @@ Escaping all three quotation marks \"\"\"
 
 
 
-
+&nbsp;
+&nbsp;
 ### 1.4 扩展字符串分隔符
 
 不转义字符串内容
@@ -176,7 +180,8 @@ hello\nkitty
 
 
 
-
+&nbsp;
+&nbsp;
 ### 1.5 初始化空字符串
 
 要创建空 String 值作为构建较长字符串的起点，请将空字符串文字分配给变量或使用初始化语法初始化新的 String 实例：
@@ -202,7 +207,8 @@ if emptyString.isEmpty {
 
 
 
-
+&nbsp;
+&nbsp;
 ### 1.6 字符串可变性
 
 您可以通过将特定的 String 分配给变量（在这种情况下可以修改）或常量（在这种情况下无法修改）来指示是否可以修改（或变异）特定的 String :
@@ -224,7 +230,8 @@ constantString += " and another Highlander"
 
 
 
-
+&nbsp;
+&nbsp;
 
 ### 1.7 String的类型
 
@@ -243,7 +250,8 @@ Swift 的默认复制 String 行为确保当函数或方法向您传递 String �
 
 
 
-
+&nbsp;
+&nbsp;
 ### 1.8 使用字符
 
 可以使用for-in循环迭代字符串来访问String的各个Character的值
@@ -274,7 +282,8 @@ print(catString)
 
 
 
-
+&nbsp;
+&nbsp;
 
 ### 1.9 链接字符串和字符
 
@@ -341,7 +350,8 @@ print(goodStart + end)
 
 
 
-
+&nbsp;
+&nbsp;
 ### 1.10 字符串插值
 
 字符串插值是一种通过将常量、变量、文字和表达式的值包含在字符串文字中来构造新 String 值的方法。您可以在单行和多行字符串文字中使用字符串插值。
