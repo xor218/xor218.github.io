@@ -364,6 +364,20 @@ enum TemperatureError:Error{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 3. switch
 
 `switch` 语句考虑一个值并将其与几种可能的匹配模式进行比较。然后，它根据第一个成功匹配的模式执行适当的代码块。 `switch` 语句提供了 `if` 语句的替代方案，用于响应多个潜在状态。
@@ -422,3 +436,181 @@ print(message)
 // Prints "The first letter of the Latin alphabet"
 ```
 
+
+在此示例中， switch 表达式中的每个 case 都包含当该 case 与 anotherCharacter 匹配时要使用的 message 值。因为 switch 总是详尽的，所以总是有一个值要分配。
+与 if 表达式一样，您可以抛出错误或调用类似 fatalError(_:file:line:) 的函数，该函数永远不会返回，而不是为给定情况提供值。您可以在赋值的右侧使用 switch 表达式，如上例所示，并将其作为函数或闭包返回的值。
+
+
+
+
+
+
+
+### 3.1 不需要break
+
+与 C 和 Objective-C 中的 `switch` 语句相比，Swift 中的 `switch` 语句默认不会落入每个 case 的底部并进入下一个 case。相反，一旦第一个匹配的 `switch` 案例完成，整个 `switch` 语句就会完成执行，而不需要显式的 `break` 语句。这使得 `switch` 语句比 C 语言中的语句更安全、更易于使用，并避免错误执行多个 `switch` 情况。
+
+> **Note:**尽管 Swift 中不需要 `break` ，但您可以使用 `break` 语句来匹配并忽略特定情况，或者在该情况完成执行之前打破匹配的情况。有关详细信息，请参阅 Switch 语句中的 Break。
+
+
+
+
+
+每个案例的主体必须至少包含一个可执行语句。编写以下代码是无效的，因为第一个 case 是空的：
+
+```swift
+let anotherCharacter: Character = "a"
+switch anotherCharacter {
+case "a": // Invalid, the case has an empty body
+case "A":
+    print("The letter A")
+default:
+    print("Not the letter A")
+}
+// This will report a compile-time error.
+```
+
+
+
+与 C 中的 `switch` 语句不同，此 `switch` 语句不匹配 `"a"` 和 `"A"` 。相反，它报告一个编译时错误，即 `case "a":` 不包含任何可执行语句。这种方法可以避免从一种情况意外转移到另一种情况，并使代码更安全、意图更清晰。
+
+
+
+要使用与 `"a"` 和 `"A"` 匹配的单一大小写创建 `switch` ，请将两个值组合成一个复合大小写，并用逗号分隔这些值。
+
+```swift
+let anotherCharacter: Character = "a"
+switch anotherCharacter {
+case "a", "A":
+    print("The letter A")
+default:
+    print("Not the letter A")
+}
+// Prints "The letter A"
+```
+
+
+
+### 3.2  区间拼配
+
+可以检查 `switch` 情况下的值是否包含在某个区间中。此示例使用数字间隔为任意大小的数字提供自然语言计数：
+
+```swift
+let approximateCount = 62
+let countedThings = "moons orbiting Saturn"
+let naturalCount: String
+switch approximateCount {
+case 0:
+    naturalCount = "no"
+case 1..<5:
+    naturalCount = "a few"
+case 5..<12:
+    naturalCount = "several"
+case 12..<100:
+    naturalCount = "dozens of"
+case 100..<1000:
+    naturalCount = "hundreds of"
+default:
+    naturalCount = "many"
+}
+print("There are \(naturalCount) \(countedThings).")
+// Prints "There are dozens of moons orbiting Saturn."
+```
+
+在上面的示例中， `approximateCount` 在 `switch` 语句中进行计算。每个 `case` 将该值与数字或间隔进行比较。由于 `approximateCount` 的值介于 12 和 100 之间，因此 `naturalCount` 被赋予值 `"dozens of"` ，并且执行转移出 `switch` 陈述。
+
+
+
+###  3.3 元祖(Tuple)
+
+您可以使用元组来测试同一 `switch` 语句中的多个值。可以针对不同的值或值区间来测试元组的每个元素。或者，使用下划线字符 ( `_` )（也称为通配符模式）来匹配任何可能的值。
+
+下面的示例采用 (x, y) 点，表示为 `(Int, Int)` 类型的简单元组，并将其在示例后面的图表上进行分类。
+
+
+
+```swift
+let somePoint = (1, 1)
+switch somePoint {
+case (0, 0):
+    print("\(somePoint) is at the origin")
+case (_, 0):
+    print("\(somePoint) is on the x-axis")
+case (0, _):
+    print("\(somePoint) is on the y-axis")
+case (-2...2, -2...2):
+    print("\(somePoint) is inside the box")
+default:
+    print("\(somePoint) is outside of the box")
+}
+// Prints "(1, 1) is inside the box"
+```
+
+
+
+
+
+
+
+![](https://docs.swift.org/swift-book/images/coordinateGraphSimple@2x.png)
+
+
+
+`switch` 语句确定该点是否位于原点 (0, 0)、红色 x 轴、绿色 y 轴、以原点为中心的蓝色 4×4 框内，或在盒子外面。
+
+
+
+> **Note**与 C 不同，Swift 允许多个 `switch` 情况考虑相同的值。事实上，点 (0, 0) 可以匹配本例中的所有四种情况。但是，如果可以进行多个匹配，则始终使用第一个匹配情况。点 (0, 0) 将首先匹配 `case (0, 0)` ，因此所有其他匹配情况将被忽略。
+
+
+
+
+
+### 3.4 值绑定
+
+
+
+`switch` 案例可以命名与临时常量或变量匹配的一个或多个值，以便在案例主体中使用。这种行为称为值绑定，因为值绑定到案例主体内的临时常量或变量。
+
+下面的示例采用 (x, y) 点，表示为 `(Int, Int)` 类型的元组，并将其在下面的图表中进行分类：
+
+```swift
+let anotherPoint = (2, 0)
+switch anotherPoint {
+case (let x, 0):
+    print("on the x-axis with an x value of \(x)")
+case (0, let y):
+    print("on the y-axis with a y value of \(y)")
+case let (x, y):  //没有default:匹配默认值
+    print("somewhere else at (\(x), \(y))")
+}
+// Prints "on the x-axis with an x value of 2"
+```
+
+
+
+![](https://docs.swift.org/swift-book/images/coordinateGraphMedium@2x.png)
+
+
+
+
+
+`switch` 语句确定该点是否位于红色 x 轴、绿色 y 轴或其他位置（两个轴上）。
+
+三种 `switch` 情况声明占位符常量 `x` 和 `y` ，它们临时采用 `anotherPoint` 中的一个或两个元组值。第一种情况 `case (let x, 0)` 匹配任何 `y` 值为 `0` 的点，并将该点的 `x` 值分配给临时常量 < b8> 。类似地，第二种情况 `case (0, let y)` 匹配任何 `x` 值为 `0` 的点，并将该点的 `y` 值分配给临时对象。常量 `y` 。
+
+
+
+声明临时常量后，可以在 case 的代码块中使用它们。在这里，它们用于打印点的分类。
+
+此 `switch` 语句没有 `default` 大小写。最后一种情况 `case let (x, y)` 声明一个由两个可以匹配任何值的占位符常量组成的元组。由于 `anotherPoint` 始终是两个值的元组，因此这种情况会匹配所有可能的剩余值，并且不需要 `default` 情况来使 `switch` 语句详尽无遗。
+
+
+
+
+
+### 3.5 sitch中的where
+
+`switch` 案例可以使用 `where` 子句来检查附加条件。
+
+下面的示例对下图上的 (x, y) 点进行分类：
