@@ -77,6 +77,26 @@ print(greetAgain(person: "Anna"))
 
 
 
+#### 1.1.1参数标签和参数名
+
+Swift 允许为每个参数指定一个参数标签和参数名：
+
+- **参数标签（argument label）**：在函数调用时使用，帮助提高调用的可读性。
+- **参数名（parameter name）**：在函数实现中使用，表示函数内部的参数变量名。
+
+以下是一个示例函数定义和调用：
+
+```swift
+func greeting(for person: String) -> String {
+    return "Hello, \(person)!"
+}
+
+let message = greeting(for: "Alice")
+print(message)
+
+```
+
+
 
 
 ### 1.2 函数参数和返回值
@@ -238,7 +258,7 @@ print("min is \(bounds.min) and max is \(bounds.max)")
 
 
 
-### 1.2.6可选元祖返回类型
+#### 1.2.6可选元祖返回类型
 
 如果要从函数返回的元组类型对于整个元组可能具有“无值”，则可以使用可选的元组返回类型来反映整个元组可以是 `nil` 的事实。通过在元组类型的右括号后放置一个问号（如 `(Int, Int)?` 或 `(String, Int, Bool)?` ）来编写可选的元组返回类型。
 
@@ -272,4 +292,39 @@ if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
 }
 // Prints "min is -6 and max is 109"
 ```
+
+
+
+#### 1.2.6 具有隐式返回的函数
+
+如果函数的整个主体是单个表达式，则该函数隐式返回该表达式。例如，以下两个函数具有相同的行为：
+
+```swift
+func greeting(for person: String) -> String {
+    "Hello, " + person + "!"
+}
+print(greeting(for: "Dave"))
+// Prints "Hello, Dave!"
+
+
+func anotherGreeting(for person: String) -> String {
+    return "Hello, " + person + "!"
+}
+print(anotherGreeting(for: "Dave"))
+// Prints "Hello, Dave!"
+```
+
+该 `greeting(for:)` 函数的整个定义是它返回的问候语，这意味着它可以使用这种较短的形式。该 `anotherGreeting(for:)` 函数返回相同的问候语，使用 `return` 关键字，例如更长的函数。您仅作为一 `return` 行编写的任何函数都可以省略 `return` .
+
+> **Note**:作为隐式返回值编写的代码需要返回一些值。例如，不能用作 `print(13)` 隐式返回值。但是，您可以使用永远不会返回 like `fatalError("Oh no!")` 的函数作为隐式返回值，因为 Swift 知道隐式返回不会发生。
+
+
+
+
+
+## 2. 函数参数标签和参数名称
+
+每个函数参数都有一个参数标签和一个参数名称。调用函数时使用参数标签;每个参数都写在函数调用中，前面有其参数标签。参数名称用于函数的实现。默认情况下，参数使用其参数名称作为其参数标签。
+
+
 
