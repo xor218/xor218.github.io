@@ -322,9 +322,409 @@ print(anotherGreeting(for: "Dave"))
 
 
 
+
+
+
+
 ## 2. 函数参数标签和参数名称
 
-每个函数参数都有一个参数标签和一个参数名称。调用函数时使用参数标签;每个参数都写在函数调用中，前面有其参数标签。参数名称用于函数的实现。默认情况下，参数使用其参数名称作为其参数标签。
+每个函数参数都有一个**参数标签**和一个**参数名称**。**调用函数时使用参数标签;**每个参数都写在函数调用中，前面有其参数标签。**参数名称用于函数的实现**。**默认情况下，参数使用其参数名称作为其参数标签。**
+
+```swift
+func someFunction(firstParameterName: Int, secondParameterName: Int) {
+    // In the function body, firstParameterName and secondParameterName
+    // refer to the argument values for the first and second parameters.
+}
+someFunction(firstParameterName: 1, secondParameterName: 2)
+```
+
+所有参数必须具有唯一的名称。尽管多个参数可能具有相同的参数标签，但唯一的参数标签有助于提高代码的可读性。
 
 
+
+### 2.1指定参数标签
+
+在参数名称之前编写一个参数标签，用空格分隔：
+
+```swift
+func someFunction(argumentLabel parameterName: Int) {
+    // In the function body, parameterName refers to the argument value
+    // for that parameter.
+}
+```
+
+以下是该 `greet(person:)` 函数的变体，该函数采用一个人的姓名和家乡并返回问候语：
+
+```swift
+func greet(person: String, from hometown: String) -> String {
+    return "Hello \(person)!  Glad you could visit from \(hometown)."
+}
+print(greet(person: "Bill", from: "Cupertino"))
+// Prints "Hello Bill!  Glad you could visit from Cupertino."
+
+```
+
+使用参数标签可以允许以富有表现力的类似句子的方式调用函数，同时仍然提供可读且意图清晰的函数体。
+
+
+
+
+
+### 2.1 省略参数标签
+
+如果布需要参数的参数标签，请为该参数编写下划线(_),而不是显式参数标签
+
+```swift
+func someFunction(_ firstParameterName:Int,secondParameterName:Int){
+	    // 在函数体中，firstParameterName 和 secondParameterName
+    // 参考第一个和第二个参数的参数值。
+}
+```
+
+**如果参数具有参数标签，则在调用函数时必须标记该参数。**
+
+
+
+### 2.2 默认参数值
+
+您可以通过在函数类型之后为参数赋值来定义函数中任何参数的默认值。如果定义了默认值，则可以在调用函数时省略该参数。
+
+```swift
+func someFunction(parameterWithoutDefault: Int, parameterWithDefault: Int = 12) {
+    // If you omit the second argument when calling this function, then
+    // the value of parameterWithDefault is 12 inside the function body.
+}
+someFunction(parameterWithoutDefault: 3, parameterWithDefault: 6) // parameterWithDefault is 6
+someFunction(parameterWithoutDefault: 4) // parameterWithDefault is 12
+```
+
+
+
+将没有默认值的参数放在函数参数列表的开头，放在具有默认值的参数之前。
+
+
+
+## 3. 可变参数
+
+###  3.1 参数为固定类型
+
+可变参数接受零个或多个指定类型的值。您可以使用可变参数指定在调用函数时可以传递不同数量的输入值。通过在参数的类型名称后插入三个句点字符 （ `...` ） 来写入可变参数。
+
+
+
+传递给可变参数的值在函数的主体中作为相应类型的数组提供。例如，名称 `numbers` 为 和 类型的 `Double...` 可变参数在函数主体中作为称为 `numbers` 类型的 `[Double]` 常量数组提供。
+
+
+
+下面的示例计算任意长度的数字列表的算术平均值（也称为平均值）：
+
+```swift
+func arithmeticMean(_ numbers: Double...) -> Double {
+    var total: Double = 0
+    for number in numbers {
+        total += number
+    }
+    return total / Double(numbers.count)
+}
+arithmeticMean(1, 2, 3, 4, 5)
+// returns 3.0, which is the arithmetic mean of these five numbers
+arithmeticMean(3, 8.25, 18.75)
+// returns 10.0, which is the arithmetic mean of these three numbers
+```
+
+
+
+### 3.2 参数为混合类型
+
+**使用 Any 类型实现混合参数**
+
+如果你确实需要传递不同类型的参数，可以使用 Any 类型，但这会失去类型安全性：
+
+```swift
+func stdCout(_ items:Any...){
+    for item in items{
+        print("\(item)")
+    }
+}
+
+stdCout(_:1,"Hello","fuckyou",2.3)
+
+```
+
+在 Swift 中，可变参数必须是固定类型的。虽然可以使用 Any 类型来实现混合类型的参数传递，但这通常不是最佳实践，因为它会牺牲类型安全性。通常，明确和强类型的参数定义可以帮助提高代码的可读性和安全性。
+
+
+
+## 4. In-Out参数 修改值
+
+
+
+默认情况下，函数参数是常量。尝试从函数的主体中更改函数参数的值会导致编译时错误。这意味着您不能错误地更改参数的值。
+
+如果希望函数修改参数的值，并且希望这些更改在函数调用结束后仍然存在，请改为将该参数定义为 in-out 参数。
+
+通过将 `inout` 关键字放在参数类型之前来编写 in-out 参数。in-out 参数具有传入函数的值，由函数修改，并传回函数以替换原始值。有关 in-out 参数的行为和相关编译器优化的详细讨论，请参阅 In-Out 参数。
+
+您只能将变量作为 in-out 参数的参数传递。不能将常量或文本值作为参数传递，因为无法修改常量和文本。当您将变量名称作为参数传递给 in-out 参数时，您可以直接在变量名称之前放置一个 & 符号 （ `&` ），以指示该函数可以对其进行修改。
+
+
+
+> **Note:**In-out 参数不能具有默认值，并且可变参数不能标记为 `inout` 。
+>
+> 使用关键字**inout**,调用的时候在参数前面加上**&**,不可以用作默认参数
+
+
+
+下面是一个名为 `swapTwoInts(_:_:)` 的函数示例，该函数有两个名为 `a` 和 `b` 的 in-out 整数参数：
+
+```swift
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+```
+
+该 `swapTwoInts(_:_:)` 函数只是交换 `b` into `a` 的值和 `a` into `b` 的值。该函数通过将 的 `a` 值存储在一个名为 `temporaryA` 的临时常量中来执行此交换，将 的 `b` 值赋值为 `a` ，然后赋值 `temporaryA` `b` 给 。
+
+您可以使用两个类型的 `Int` 变量调用 `swapTwoInts(_:_:)` 函数来交换它们的值。请注意， `someInt` 当 和 `anotherInt` 的名称传递给 `swapTwoInts(_:_:)` 函数时，它们会以 & 符号为前缀：
+
+```swift
+var someInt = 3
+var anotherInt = 107
+swapTwoInts(&someInt, &anotherInt)
+print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
+// Prints "someInt is now 107, and anotherInt is now 3"
+```
+
+上面的示例显示 `someInt` ，函数修改了 和 `anotherInt` `swapTwoInts(_:_:)` 的原始值，即使它们最初是在函数外部定义的。
+
+
+
+>**Note:**
+>
+>In-out 参数与从函数返回值不同。上面 `swapTwoInts` 的示例未定义返回类型或返回值，但仍会修改 `someInt` 和 `anotherInt` 的值。In-out 参数是函数在其函数体范围之外产生影响的另一种方式。
+
+
+
+## 5.函数类型
+
+每个函数都有一个特定的函数类型，由函数的参数类型和返回类型组成。
+
+**例如**:
+
+```swift
+func addTwoInts(_ a: Int, _ b: Int) -> Int {
+    return a + b
+}
+func multiplyTwoInts(_ a: Int, _ b: Int) -> Int {
+    return a * b
+}
+```
+
+此示例定义了两个简单的数学函数，分别称为 `addTwoInts` 和 `multiplyTwoInts` 。这些函数每个取两个 `Int` 值，并返回一个 `Int` 值，该值是执行适当数学运算的结果。
+
+这两个函数的类型都是 `(Int, Int) -> Int` 。这可以理解为：
+
+“一个函数，它有两个参数，都是 类型 `Int` ，并且返回一个 类型的 `Int` 值。”
+
+下面是另一个示例，对于没有参数或返回值的函数：
+
+```swift
+func printHelloWorld() {
+    print("hello, world")
+}
+```
+
+此函数的类型是 `() -> Void` ，或“没有参数的函数，并返回 `Void` ”。
+
+
+
+
+
+### 5.1使用函数类型
+
+您可以使用函数类型，就像 Swift 中的任何其他类型一样。例如，您可以将常量或变量定义为函数类型，并为该变量分配适当的函数：
+
+```swift
+var mathFunction: (Int, Int) -> Int = addTwoInts
+```
+
+这可以理解为：
+
+“定义一个名为 `mathFunction` 的变量，该变量的类型为'接受两个 `Int` 值并返回一个 `Int` 值的函数'。将此新变量设置为引用名为 `addTwoInts` .“ 的函数。
+
+该 `addTwoInts(_:_:)` 函数与 `mathFunction` 变量具有相同的类型，因此 Swift 的类型检查器允许这种赋值。
+
+您现在可以调用名称 `mathFunction` 为：
+
+```swift
+print("Result: \(mathFunction(2, 3))")
+// Prints "Result: 5"
+```
+
+可以将具有相同匹配类型的不同函数分配给同一变量，其方式与非函数类型相同：
+
+```swift
+mathFunction = multiplyTwoInts
+print("Result: \(mathFunction(2, 3))")
+// Prints "Result: 6"
+```
+
+与任何其他类型一样，当您将函数分配给常量或变量时，您可以将其留给 Swift 来推断函数类型：
+
+```swift
+let anotherMathFunction = addTwoInts
+// anotherMathFunction is inferred to be of type (Int, Int) -> Int
+```
+
+
+
+**testing:**
+
+```swift
+
+func add(_ a:Int, _ b:Int) ->Int{
+    return a+b
+}
+
+func muti(_ a:Int,_ b:Int) ->Int{
+    return a*b
+}
+
+let var1:Int = 4
+let var2:Int = 8
+
+//定义函数指针 并且指向第一个函数
+var IntMethod:(Int,Int)->Int = add
+print("IntMethod(\(var1),\(var2)) = \(IntMethod(var1,var2))")
+//out:IntMethod(4,8) = 12
+
+IntMethod = muti  //函数指针指向第二个函数
+print("IntMethod(\(var1),\(var2)) = \(IntMethod(var1,var2))")
+//IntMethod(4,8) = 32
+
+
+```
+
+
+
+
+
+### 5.2 函数作为参数类型
+
+您可以使用函数类型（例如 `(Int, Int) -> Int` ）作为另一个函数的参数类型。这使您能够将函数实现的某些方面留给函数的调用者在调用函数时提供。
+
+
+
+下面是一个从上面打印数学函数结果的示例：
+
+```swift
+func printMathResult(_ mathFunction: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+    print("Result: \(mathFunction(a, b))")
+}
+printMathResult(addTwoInts, 3, 5)
+// Prints "Result: 8"
+```
+
+
+
+此示例定义了一个名为 `printMathResult(_:_:_:)` 的函数，该函数具有三个参数。第一个参数称为 `mathFunction` ，类型 `(Int, Int) -> Int` 为 。您可以传递该类型的任何函数作为第一个参数的参数。第二个和第三个参数称为 `a` 和 `b` ，并且都属于 `Int` 类型。这些用作所提供数学函数的两个输入值。
+
+调用时 `printMathResult(_:_:_:)` ，它传递 `addTwoInts(_:_:)` 函数，整数值 `3` 和 `5` .它使用值 `3` 和 `5` 调用提供的函数，并打印 `8` 的结果。
+
+的作用 `printMathResult(_:_:_:)` 是打印对适当类型的数学函数的调用结果。该函数的实现实际执行什么并不重要，重要的是该函数的类型是否正确。这样 `printMathResult(_:_:_:)` 就可以以类型安全的方式将其某些功能移交给函数的调用方。
+
+
+
+### 5.3 函数类型作为返回值
+
+可以使用一个函数类型作为另一个函数的返回类型。为此，请在返回函数的返回箭头 （ `->` ） 之后立即编写一个完整的函数类型。
+
+
+
+下一个示例定义了两个名为 `stepForward(_:)` 和 `stepBackward(_:)` 的简单函数。该 `stepForward(_:)` 函数返回的值比其输入值多 1， `stepBackward(_:)` 函数返回的值比其输入值少 1。这两个函数的类型为 `(Int) -> Int` ：
+
+
+
+```swift
+func stepForward(_ input: Int) -> Int {
+    return input + 1
+}
+func stepBackward(_ input: Int) -> Int {
+    return input - 1
+}
+```
+
+下面是一个名为 `chooseStepFunction(backward:)` 的函数，其返回类型为 `(Int) -> Int` 。该 `chooseStepFunction(backward:)` 函数返回 `stepForward(_:)` 函数或基于布尔参数的 `stepBackward(_:)` 函数，称为 `backward` ：
+
+```swift
+func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+    return backward ? stepBackward : stepForward
+}
+```
+
+现在 `chooseStepFunction(backward:)` ，您可以使用该函数来获取将单向或另一个方向步进的函数：
+
+```swift
+var currentValue = 3
+let moveNearerToZero = chooseStepFunction(backward: currentValue > 0)
+// moveNearerToZero now refers to the stepBackward() function
+```
+
+上面的示例确定是否需要正步长或负步长才能将名为 `currentValue` “逐渐接近零”的变量移动。 `currentValue` 的初始值为 `3` ，这意味着 `currentValue > 0` 返回 `true` ，导致 `chooseStepFunction(backward:)` 返回 `stepBackward(_:)` 函数。对返回函数的引用存储在名为 `moveNearerToZero` 的常量中。
+
+
+
+现在指的是 `moveNearerToZero` 正确的函数，它可以用来数到零：
+
+
+
+```swift
+print("Counting to zero:")
+// Counting to zero:
+while currentValue != 0 {
+    print("\(currentValue)... ")
+    currentValue = moveNearerToZero(currentValue)
+}
+print("zero!")
+// 3...
+// 2...
+// 1...
+// zero!
+```
+
+
+
+
+
+## 5.4 嵌套函数
+
+到目前为止，您在本章中遇到的所有函数都是全局函数的示例，这些函数是在全局范围内定义的。您还可以在其他函数的主体中定义函数，称为嵌套函数。
+
+默认情况下，嵌套函数对外界是隐藏的，但仍可由其封闭函数调用和使用。封闭函数还可以返回其嵌套函数之一，以允许在另一个作用域中使用嵌套函数。
+
+您可以重写上面的 `chooseStepFunction(backward:)` 示例以使用和返回嵌套函数：
+
+```swift
+func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+    func stepForward(input: Int) -> Int { return input + 1 }
+    func stepBackward(input: Int) -> Int { return input - 1 }
+    return backward ? stepBackward : stepForward
+  //根据条件返回内嵌的不同函数,外部用let接收并且调用
+}
+var currentValue = -4
+let moveNearerToZero = chooseStepFunction(backward: currentValue > 0)
+// moveNearerToZero now refers to the nested stepForward() function
+while currentValue != 0 {
+    print("\(currentValue)... ")
+    currentValue = moveNearerToZero(currentValue)
+}
+print("zero!")
+// -4...
+// -3...
+// -2...
+// -1...
+// zero!
+```
 
