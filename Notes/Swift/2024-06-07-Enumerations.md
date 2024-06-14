@@ -459,3 +459,96 @@ func 递归函数(_ 参数:MyEnumType ) -> Int(or otherType) {
 
 
 ```
+
+
+
+### 9. Enum里面的static
+
+**By chatgpt:**
+
+在 Swift 中，`enum` 是一种值类型，用于定义一组相关的值或状态。尽管枚举不能被继承，它们可以包含 `static` 属性和方法。使用 `static` 属性和方法可以为枚举类型提供与具体实例无关的共享数据或行为。
+
+**为什么 `enum` 可以使用 `static` 变量**
+
+`static` 属性和方法在类型本身上定义，而不是在类型的实例上定义。这对于枚举来说是有意义的，因为枚举实例是值类型，每个实例都是独立的。但有时我们需要一些与实例无关的共享数据或方法，例如计数、通用的实用方法或常量。`static` 属性和方法正好满足了这种需求。
+
+**如何在 `enum` 中使用 `static` 变量和方法**
+
+以下是一些示例，展示了如何在枚举中使用 `static` 属性和方法：
+
+**示例 1：静态属性**
+
+```swift
+enum Direction {
+    case north
+    case south
+    case east
+    case west
+
+    // 静态属性，用于存储一些与实例无关的共享数据
+    static var allDirections: [Direction] {
+        return [.north, .south, .east, .west]
+    }
+}
+
+// 访问静态属性
+let directions = Direction.allDirections
+print(directions)  // 输出: [Direction.north, Direction.south, Direction.east, Direction.west]
+```
+
+**示例 2：静态方法**
+
+```swift
+enum Math {
+    case add
+    case subtract
+    case multiply
+    case divide
+
+    // 静态方法，用于一些与实例无关的操作
+    static func calculate(_ operation: Math, _ a: Double, _ b: Double) -> Double {
+        switch operation {
+        case .add:
+            return a + b
+        case .subtract:
+            return a - b
+        case .multiply:
+            return a * b
+        case .divide:
+            return a / b
+        }
+    }
+}
+
+// 使用静态方法
+let result = Math.calculate(.add, 10, 20)
+print(result)  // 输出: 30.0
+```
+
+ **示例 3：静态常量**
+
+```swift
+enum AppConfig {
+    static let apiEndpoint = "https://api.example.com"
+    static let apiKey = "ABC123"
+
+    case someCase
+}
+
+// 访问静态常量
+let endpoint = AppConfig.apiEndpoint
+print(endpoint)  // 输出: https://api.example.com
+```
+
+**解释**
+
+1. **静态属性**：`static var allDirections: [Direction]` 定义了一个静态属性，返回所有可能的方向。这些数据与任何实例无关，因此定义为静态属性。
+2. **静态方法**：`static func calculate(_ operation: Math, _ a: Double, _ b: Double) -> Double` 定义了一个静态方法，根据枚举值执行数学计算。这种方法在不需要实例的情况下提供实用功能。
+3. **静态常量**：`static let apiEndpoint = "https://api.example.com"` 定义了一个静态常量，存储 API 端点地址，这在整个应用程序中都是共享的，不依赖于任何实例。
+
+**总结**
+
+- **`static` 关键字**：在枚举中使用 `static` 关键字，可以定义与实例无关的共享属性和方法。
+- **用途**：用于定义常量、实用方法或其他与实例无关的共享数据。
+
+通过这些示例和解释，可以更好地理解如何在 Swift 中的枚举中使用 `static` 属性和方法，以实现与实例无关的共享数据或行为。
