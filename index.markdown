@@ -16,4 +16,5 @@ layout: home
 - [Qt]({{ site.baseurl  }}/IndexOfMarkDown/Qt)
 - [Linux & Command]({{ site.baseurl  }}/IndexOfMarkDown/Linux&Command)
 - [Swift]({{ site.baseurl  }}/IndexOfMarkDown/Swift)
+- [DesignPattern]({{ site.baseurl  }}/IndexOfMarkDown/DesignPattern)
 
