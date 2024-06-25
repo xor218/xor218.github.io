@@ -8,7 +8,7 @@ listedInHeader: true
 
 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Matti-Pellonp%C3%A4%C3%A4-1990.jpg/1920px-Matti-Pellonp%C3%A4%C3%A4-1990.jpg" >
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Matti-Pellonp%C3%A4%C3%A4-1990.jpg/1920px-Matti-Pellonp%C3%A4%C3%A4-1990.jpg" alt="Description of image" style="display: block; margin-left: auto; margin-right: auto; width: 40%;" >
 
 <p></p> 
 
