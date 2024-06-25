@@ -1,3 +1,55 @@
+# Usage 
+  如果要新建一个条目，需要在 indexOfMarkDown 建立一个 markdown文件
+  例如需要建立macos 标签
+
+  indexOfMarkDown/macos.markdown
+
+  ```markdown
+---
+layout: page
+title: macos   
+listedInHeader: true  会被列在条目里面，
+---
+<ul>
+{% for page in site.pages %}
+     <!-- 包含 macos的 -->
+    {% if page.path contains 'macos' %}
+        <!-- 包含 macos的 但是  listedInHeader 没有设的会被列出来-->
+        {% unless page.listedInHeader %}  
+            <li>
+                <a href="{{ page.url }}">{{ page.title }}</a>
+            </li>
+        {% endunless %}
+    {% endif %}
+{% endfor %}
+</ul>
+```
+
+
+为了文档有序，建议在Notes 目录下面建立一个macos目录,笔记标题格式 2022-04-26 可以使用项目的 maketitle.sh 里面的maketitle函数
+
+example 
+```
+maketitile Swift class 
+
+//会新建jekyll要求的md 文件名称，并且写好内容
+
+```
+
+file:2024-06-12-Swift-Class.md
+```
+---
+layout: post                //使用什么布局
+author: "大西瓜"              //作者名称
+title: "解决无法找到Qt"       //显示的标题
+date:   2024-05-04 22:09:42 +0800 //当前时间 时区间
+categories: [update,macos]       //分类  update + 当前目录名称
+---
+```
+
+所有格式规范好，才显得不乱
+
+
 # minima
 
 *Minima is a one-size-fits-all Jekyll theme for writers*. It's Jekyll's default (and first) theme. It's what you get when you run `jekyll new`.
@@ -216,3 +268,6 @@ To test your theme, run `script/server` (or `bundle exec jekyll serve`) and open
 ## License
 
 The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+
+
