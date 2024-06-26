@@ -158,7 +158,7 @@ print("The bank now has \(Bank.coinsInBank) coins")
 
 
 
-### 引用类型在函数中的生命周期
+### 3.引用类型的生命周期
 
 ```swift
 
