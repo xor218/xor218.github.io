@@ -1,0 +1,176 @@
+<mxfile host="Electron" modified="2024-07-09T14:48:01.440Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="slRNOQTeuoEnsC_4R0ci" version="21.6.5" type="device">
+  <diagram name="第 1 页" id="aYErcq1nrnW-Tze9Nzr2">
+    <mxGraphModel dx="1188" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-1" value="isa指针,指向类的元数据结构" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="414" y="620" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-2" value="Data Member1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="414" y="660" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-4" target="vsx0bgiD1YLHsJSa52kD-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-35" value="实例化" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vsx0bgiD1YLHsJSa52kD-33">
+          <mxGeometry x="0.0556" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-4" value="daHuang:Dog 类的实例" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="414" y="590" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-5" value="Data Member2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="414" y="700" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-6" target="vsx0bgiD1YLHsJSa52kD-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-18" value="服从协议" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vsx0bgiD1YLHsJSa52kD-17">
+          <mxGeometry x="0.1636" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-6" value="Animal 类" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="190" y="230" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-11" value="Dog类元数据" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="730" y="410" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-16" target="vsx0bgiD1YLHsJSa52kD-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-41" value="声明一个变量&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vsx0bgiD1YLHsJSa52kD-40">
+          <mxGeometry x="-0.01" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-16" target="vsx0bgiD1YLHsJSa52kD-54">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-16" value="SomeProtocol&lt;br&gt;协议" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="350" y="30" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-19" value="isa指针,指向类的元数据结构" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="60" y="630" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-20" value="Data Member1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="60" y="670" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-21" target="vsx0bgiD1YLHsJSa52kD-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-34" value="实例化" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vsx0bgiD1YLHsJSa52kD-32">
+          <mxGeometry x="-0.0143" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-21" value="jerry :Cat 类的实例" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="590" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-22" value="Data Member2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="60" y="710" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-26" target="vsx0bgiD1YLHsJSa52kD-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-26" value="Cat 类" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="30" y="400" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-27" target="vsx0bgiD1YLHsJSa52kD-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-31" value="继承" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vsx0bgiD1YLHsJSa52kD-30">
+          <mxGeometry x="0.7857" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-27" target="vsx0bgiD1YLHsJSa52kD-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-52" value="元数据" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vsx0bgiD1YLHsJSa52kD-51">
+          <mxGeometry x="-0.02" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-27" value="Dog 类" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="380" y="400" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-36" target="vsx0bgiD1YLHsJSa52kD-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1080" y="729" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1080" y="110" />
+              <mxPoint x="1080" y="430" />
+              <mxPoint x="1081" y="430" />
+              <mxPoint x="1081" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-56" value="1.第一根指针指向实例" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vsx0bgiD1YLHsJSa52kD-55">
+          <mxGeometry x="-0.2793" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-36" value="1。类的实例指针:指向类的实例" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="90" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-37" target="vsx0bgiD1YLHsJSa52kD-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-58" value="第二根指针指向该实例所属于类的元数据" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vsx0bgiD1YLHsJSa52kD-57">
+          <mxGeometry x="-0.4714" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-37" value="2.该实例所属于类的元数据" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="130" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-38" value="Var someProtocol:SomeProtocol" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="50" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="vsx0bgiD1YLHsJSa52kD-39" target="vsx0bgiD1YLHsJSa52kD-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-60" value="第三根指针指向协议定义的方法表" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vsx0bgiD1YLHsJSa52kD-59">
+          <mxGeometry x="0.0805" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-39" value="3.协议表指针" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="170" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-42" value="&lt;h1&gt;协议容器&lt;/h1&gt;&lt;p&gt;协议里面只有三根指针&lt;/p&gt;&lt;p&gt;如果是实力化服从该协议的类，在stack开辟内存,只需要按照不同类返回不同的三根指针，达到隐藏的目的，而且可以实现多态，尝试转换成不同的类型&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="210" width="250" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-48" value="&amp;nbsp; &amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;jerry 实例的自身属性&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;类名&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;方法表&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;属性列表&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;协议列表&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;父类信息&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;类的大小和对齐方式" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="234" y="850" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-50" value="&amp;nbsp; &amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;daHuang实例的自身属性&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;类名&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;方法表&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;属性列表&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;协议列表&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;父类信息&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;•&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;类的大小和对齐方式" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="630" y="850" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-54" value="协议定义的方法表" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="550" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vsx0bgiD1YLHsJSa52kD-61" value="&lt;h1&gt;类和协议变量的内存布局&lt;/h1&gt;&lt;p&gt;Class And protocol memory layout&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="990" y="750" width="350" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
