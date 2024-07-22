@@ -7,3 +7,6 @@ vendor
 delete*/
 Srcs/
 SwiftUi/
+.vscode/
+*.data
+Notes/Swift/.MWebMetaData/
