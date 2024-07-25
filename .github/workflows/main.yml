@@ -19,3 +19,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site  # Set this to your site's build directory
+https://sub.7878787878.top/api/v1/client/subscribe?token=718ebd21132bff3d4d1f4d653aa1acde
