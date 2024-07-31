@@ -743,10 +743,14 @@ struct DrawingBuilder {
 ```swift
 
 func draw(@DrawingBuilder content: () -> Drawable) -> Drawable {
-  	//参数为闭包
+  	//所有的参数会被传递到 DrawingBuilder.buildBlock的可变参数 components 里面
+  	//content 是指向 DrawingBuilder.buildBlock 函数的指针
+  	//content() 是调用该函数
     return content()
 }
 func caps(@DrawingBuilder content: () -> Drawable) -> Drawable {
+  	//caps的参数会被 DrawingBuilder.buildblock当作可变参数，
+  	//然后content指向该函数。content()作为返回结果，在作为参数构造一个新的AllCaps 
     return AllCaps(content: content())
 }
 
@@ -798,6 +802,58 @@ let capsDrawing = caps {
 
 
 
+
+
+
+
+
+
+```mermaid
+flowchart TB
+    A[makeGreeting 函数调用] --> B["draw { }"]
+    B --> C["Stars(length: 3)"]
+    B --> D["Text('Hello')"]
+    B --> E["Space()"]
+    B --> F["caps { }"]
+    B -->G["Stars(length: 2)"]
+    
+    F --> H{if let name = name}
+    H -.-> |true| buildEither1["buildEither(first: Drawable)"] -.-> |返回| DrawAbleObj1
+    H -.-> |false| buildEither2["buildEither(second: Drawable)"] -.-> |返回| DrawAbleObj2
+    Array <--> Result[结果]
+    
+
+
+    subgraph DrawingProtocol["Drawing 协议"]
+    subgraph 参数
+        C
+        D
+        E
+        F
+        G
+  
+        DrawAbleObj1
+        DrawAbleObj2
+          end
+        Array["服从Drawing的数组"]
+    end
+
+    subgraph DrawingBuilder["@DrawingBuilder"]
+        buildBlock["buildBlock(_ components: Drawable...)"]
+        buildEither1
+        buildEither2
+    end
+    
+
+    B --> |所有参数\n放可变参数里面| buildBlock
+    B --> |有闭包指针指向这个函数| buildBlock
+    buildBlock  --> |返回数组| Array["服从Drawing的数组"]
+    
+  
+```
+
+
+
 Swift将`if`-`else`块转换为对`build Either（first：）`和`build Either（second：）`方法的调用。虽然你不会在自己的代码中调用这些方法，但显示转换的结果可以让你更容易地看到Swift在使用`Drawing Builder`语法时是如何转换代码的。
 
 
@@ -825,54 +881,50 @@ let manyStars = draw {
 
 有关Swift如何将构建器语法转换为对构建器类型方法的调用的完整列表，请参见[resultBuilder](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes#resultBuilder)。
 
+
+
 ```mermaid
-flowchart TD
-    A[makeGreeting 函数调用] --> B["draw { }"]
-    B --> C["Stars(length: 3)"]
-    B --> D["Text('Hello')"]
-    B --> E["Space()"]
-    B --> F["caps { }"]
-    B --> G["Stars(length: 2)"]
-    F --> H{if let name = name}
-    H --> I["Text(name + '!')"]
-    H --> J["Text('World!')"]
+flowchart TB
 
-    subgraph DrawingBuilder
-        direction LR
-        F --> |true| I
-        F --> |false| J
-    end
+var[manyStars] --> |Call| draw
+draw --> 参数
+draw -.- |闭包指针指向这个函数|buildBlock
 
-    subgraph Line
-        C
-        D
-        E
-        I
-        J
-        G
-    end
+Loop -.-> |call| buildArray
+buildArray -.-> |return| textArr
+textArr <-.-> |有隐式的调用返回|buildBlock
+
+Text -.-> |as| Args
+textArr -.-> |as| Args
+
+var --> |结果| FinalResut
+
+Args -.-> |当作参数| buildBlock -.-> |return| FinalResut
+
+  subgraph DrawingProtocol["Drawing 协议"]
+  subgraph 参数
+			Text["Text('Starts')"]
+			Loop("for length in 1...3")
+   end
+   Args["可变参数"]
+        
+	textArr
+	FinalResut
+      
+  end
+
+
+
+subgraph DrawingBuilder["@DrawingBuilder"]
+        buildBlock["buildBlock(_ components: Drawable...)"]
+        buildArray["buildArray(_ components: [Drawable])"]
+
+ end
+
 ```
 
 
 
-
-
-```mermaid
-flowchart LR
-    init1["Text('Hello')"] --> line1
-    init2["Space()"] --> line1
-    cond{{"name != nil?"}}
-    init3a["Text(name + '!')"] --> cap1
-    init3b["Text('World!')"] --> cap1
-    cap1["AllCaps"] --> line1
-    init4["Stars(3)"] --> line1
-    init5["Stars(2)"] --> line1
-    
-    line1["Line(elements)"] --> print["print()"]
-
-    cond -- "Yes" --> init3a
-    cond -- "No" --> init3b
-```
 
 
 
@@ -1070,3 +1122,42 @@ Welcome back, user!
 `@resultBuilder` 是一种强大的工具，可以让你使用声明式语法构建复杂的数据结构或代码。它通过将多个语句组合成一个结果，使代码更加简洁和可读。
 
 希望这个解释和示例能帮助你理解 `@resultBuilder` 的概念和用法。如果有任何进一步的问题或需要更多的解释，请随时告诉我！
+
+
+
+
+
+#### 9.2 自己理解的 resultBuild
+
+```swift
+@resultBuilder
+struct HtmlBuilder{
+    static func buildBlock(_ components: String...) -> String {
+        return components.joined(separator: "\n")
+    }
+}
+
+
+func makeHtml(@HtmlBuilder _ content: () -> String ) ->String{
+    return """
+    <head>
+        <body>
+    \(content())
+        </body>
+    </head>
+    """
+}
+
+
+
+let html = makeHtml{
+    "hello"
+    "kitty"
+}
+
+
+print(html)
+
+```
+
+<img src="image/resultBuild.jpg">
